@@ -5,7 +5,7 @@ html {
     box-sizing: inherit;
   }
 body{
-    background: url("../img/Asset 10@4x.png") no-repeat center center fixed;
+    background: url("./img/Asset 10@4x.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -95,7 +95,7 @@ function renderBackground() {
       }
     }
     // Set the new image
-    $bg.attr('src', '../img/' + chosen + '.png');
+    $bg.attr('src', './img/' + chosen + '.png');
     // console.log('Chosen background: ' + chosen);
   }
   // Determine whether width or height should be 100%
