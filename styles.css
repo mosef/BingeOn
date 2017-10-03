@@ -108,7 +108,7 @@ input[type=text] {
     background-color: #EEEEEE;
     margin: 10px 5px 10px 5px;
     padding: 20px 10px;
-    width: 60%;
+    width: 80%;
 }
 .result-name, .result-info h2 {
     color: black;
@@ -125,4 +125,16 @@ input[type=text] {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 540px), screen and (orientation: portrait) {
+    main {
+        margin-top: 50%; 
+    }
+    .js-results {
+        width: 80%;
+    }
+    .video-player {
+        Width: 100%;
+    }
 }

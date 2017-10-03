@@ -67,7 +67,7 @@ function displayYouTubeData(data) {
     ? data.items.map(
         item =>
           `<div class="player"><iframe width="560" height="315" src="https://www.youtube.com/embed/${item
-            .id.videoId}" frameborder="0" allowfullscreen></iframe></div>`
+            .id.videoId}" frameborder="0" allowfullscreen class="video-player"></iframe></div>`
       )
     : `<h2>Window is not Available</h2>`;
   $(this)
