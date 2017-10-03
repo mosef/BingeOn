@@ -29,7 +29,9 @@ function displayDive(data){
                                 <h2>${result.Name}</h2>
                                   <div class="result-info" id="${result.yID}">
                                     <p>${result.wTeaser}</p>
+                                    <div class="youTube"><div class="loader"></div></div>
                                   </div>
+                                  
                               </div>
                             </div>`);
                             $('.result-info').hide();                       
@@ -37,13 +39,12 @@ function displayDive(data){
 }
 
 function toggleOptions(data){
-  $('.js-results').click(e => {
+  $('.js-results').on('click', '.result', function(e) {
     e.preventDefault();
-    console.log("button pressed");
-    //const dataId = $(this).attr('id');
-    //console.log(dataId);
-    const buttonTarget = $(e.currentTarget).find('.result-info');
-    buttonTarget.toggle();
+    $(this).find('.result-info').toggle();
+    const searchTerm = $(this).find('.result-name > h2').text();
+    console.log(searchTerm)
+    getYouTube(searchTerm, displayYouTubeData.bind(this));
   })
 }
 
@@ -51,15 +52,15 @@ const YOUTUBE_SEARCH_URL='https://www.googleapis.com/youtube/v3/search';
 function getYouTube(query, callback) {
   const params = {
     part: 'snippet',
-    maxResults: 5,
+    maxResults: 1,
     key: 'AIzaSyCL5bhmCSouEz_reGUWoLh2xDcFfDJ9bPk',
-    q:`${query}`
+    q: query
   };
   $.getJSON(YOUTUBE_SEARCH_URL, params, callback);
 }
 function displayYouTubeData(data) {
-  const results = data.items.map((item, index) => renderResult(item));
-  $('.js-search-results').html(results);
+  const results = data.items.length ? data.items.map(item => `<div class="player"><iframe width="560" height="315" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe></div>`) : `<h2>Window is not Available</h2>`;
+  $(this).find('.youTube').html(results);
   console.log(data.items)
 }
 
