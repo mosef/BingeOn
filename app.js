@@ -15,17 +15,17 @@ function getDive(query, callback){
      dataType: 'jsonp',
      callback: 'jsonp',
      success: function(data) {
-       console.log(data.Similar.Results);
        displayDive(data);
     }
   });
 }
+
 function displayDive(data){
   const diveData = data.Similar.Results;
-  for (let i = 0; i <diveData.length; i++) {
+  for (let i = 0; i <diveData.length; i++){
     let result = diveData[i];
     $('.js-results').append(`<div class="result ${i}">
-                              <div class="result-name">
+                              <div class="result-name" id="${result.yID}">
                                 <h2>${result.Name}</h2>
                                   <div class="result-info">
                                     <p>${result.wTeaser}</p>
@@ -39,7 +39,16 @@ function displayDive(data){
   }
 }
 
-// name type wTeaser wUrl yUrl
+function toggleOptions(data){
+  $('.js-results').click(e => {
+    e.preventDefault();
+    console.log("button pressed");
+    //const dataId = $(this).attr('id');
+    //console.log(dataId);
+    const buttonTarget = $(e.currentTarget).find('.result-info');
+    buttonTarget.toggle();
+  })
+}
 
 const YOUTUBE_SEARCH_URL='https://www.googleapis.com/youtube/v3/search';
 function getYouTube(query, callback) {
@@ -97,12 +106,3 @@ function renderBackground() {
   } 
     }).resize();
   }
-
-function toggleOptions() {
-  $('.js-results').click(e => {
-    e.preventDefault();
-    console.log("button pressed");
-    const buttonTarget = $(e.currentTarget).find('.result-info');
-    buttonTarget.toggle();
-  })
-}
