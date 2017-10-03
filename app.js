@@ -1,52 +1,47 @@
 $(function() {
     searchSubmit();
     renderBackground();
+    toggleOptions();
  });
- //function to call testdive api
 function getDive(query, callback){
-  const tasteDive_URL = "https://tastedive.com/api/similar?q="+query+"&type=shows&info=1&limit=20&k=284615-BingeOn-6N8G8Z98";
+  const tasteDive_URL = 'https://tastedive.com/api/similar?q='+query+'&type=shows&info=1&limit=20&k=284615-BingeOn-6N8G8Z98';
      $.ajax({
      url: tasteDive_URL,
      q: '${query} in:name',
      type: 'shows',
      info: 1,
-     limit: 20,
+     limit: 5,
      k: '284615-BingeOn-6N8G8Z98',
-     dataType: "jsonp",
+     dataType: 'jsonp',
      callback: 'jsonp',
      success: function(data) {
        console.log(data.Similar.Results);
        displayDive(data);
-       //showData(data);
-      /*const info = data.map(function(name) {
-        return info.name + 'test';
-      })
-      console.log(info)*/
-
-      /*info.forEach(function (index){
-        //$(".js-results").append('<div class="result"><div class="result-name">'+`${index}`+'</div></div>')
-        console.log(name)
-      })*/
-      //$(".js-results").append('<div class="result"><div class="result-name">'+`${data.Similar.Results[0].Name}`+'</div><div class="result-type">'+`${data.Similar.Results[0].Type}`+'</div><div class="result-teaser">'+`${data.Similar.Results[0].yUrl}`+'</div></div>')
-     }
+    }
   });
 }
 function displayDive(data){
   const diveData = data.Similar.Results;
   for (let i = 0; i <diveData.length; i++) {
     let result = diveData[i];
-    $(".js-results").append('<div class="result '+`${i}`+'"><div class="result-name"><h2>'+`${result.Name}`+'</h2></div><div class="result-info">'+`${result.wTeaser}`+'</div></div>')
-    /*$(".js-results").append('<div class="result'+`${i}`+'">')
-      $(".result"+`${i}`).append('<div class="result-name">'+`${result.Name}`+'</div>')
-      $(".result-name"+`${i}`).append('<div class="result-info">'+`${result.wTeaser}`+'</div></div>')*/
+    $('.js-results').append(`<div class="result ${i}">
+                              <div class="result-name">
+                                <h2>${result.Name}</h2>
+                                  <div class="result-info">
+                                    <p>${result.wTeaser}</p>
+                                  </div>
+                                  <button type="button" class="option-button">
+                                    Details
+                                  </button>
+                              </div>
+                            </div>`);
+                            $('.result-info').hide();                       
   }
 }
 
 // name type wTeaser wUrl yUrl
 
-// call to youtube api
 const YOUTUBE_SEARCH_URL='https://www.googleapis.com/youtube/v3/search';
-//function that gets the data from the api
 function getYouTube(query, callback) {
   const params = {
     part: 'snippet',
@@ -62,18 +57,17 @@ function displayYouTubeData(data) {
   console.log(data.items)
 }
 
- //function to handle user search
 function searchSubmit() {
   $('.js-search-form').submit(e => {
   e.preventDefault();
-  const queryTarget = $(event.currentTarget).find('.js-query');
+  const queryTarget = $(e.currentTarget).find('.js-query');
   const query = queryTarget.val();
   getDive(query);
   getYouTube(query);
+  $('.js-results').empty();
   });
 }
 
-//function to handle background sizes
 function renderBackground() {
   const win = $(window);
   win.resize(function() {
@@ -94,11 +88,8 @@ function renderBackground() {
         break;
       }
     }
-    // Set the new image
     $bg.attr('src', './img/' + chosen + '.png');
-    // console.log('Chosen background: ' + chosen);
   }
-  // Determine whether width or height should be 100%
   if ((win_w / win_h) < ($bg.width() / $bg.height())) {
     $bg.css({height: '100%', width: 'auto'});
   } else {
@@ -106,3 +97,12 @@ function renderBackground() {
   } 
     }).resize();
   }
+
+function toggleOptions() {
+  $('.js-results').click(e => {
+    e.preventDefault();
+    console.log("button pressed");
+    const buttonTarget = $(e.currentTarget).find('.result-info');
+    buttonTarget.toggle();
+  })
+}
