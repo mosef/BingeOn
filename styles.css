@@ -108,6 +108,7 @@ input[type=text] {
     background-color: #EEEEEE;
     margin: 10px 5px 10px 5px;
     padding: 20px 10px;
+    width: 60%;
 }
 .result-name, .result-info h2 {
     color: black;

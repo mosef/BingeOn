@@ -25,14 +25,11 @@ function displayDive(data){
   for (let i = 0; i <diveData.length; i++){
     let result = diveData[i];
     $('.js-results').append(`<div class="result ${i}">
-                              <div class="result-name" id="${result.yID}">
+                              <div class="result-name">
                                 <h2>${result.Name}</h2>
-                                  <div class="result-info">
+                                  <div class="result-info" id="${result.yID}">
                                     <p>${result.wTeaser}</p>
                                   </div>
-                                  <button type="button" class="option-button">
-                                    Details
-                                  </button>
                               </div>
                             </div>`);
                             $('.result-info').hide();                       
