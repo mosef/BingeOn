@@ -127,7 +127,7 @@ input[type=text] {
     100% { transform: rotate(360deg); }
 }
 
-@media (min-width: 540px), screen and (orientation: portrait) {
+@media (max-width: 540px), screen and (orientation: portrait) {
     main {
         margin-top: 50%; 
     }
