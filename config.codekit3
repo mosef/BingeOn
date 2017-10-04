@@ -349,6 +349,56 @@
 		"oAP": "\/styles-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/User Flow\/napkin_flows.jpeg": {
+		"ft": 16384,
+		"iS": 1991001,
+		"oA": 0,
+		"oAP": "\/User Flow\/napkin_flows.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/wireFrames\/frames_Designed Extended.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/wireFrames\/frames_Designed Extended.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wireFrames\/frames_Designed.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/wireFrames\/frames_Designed.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wireFrames\/frames_Initial Planning.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/wireFrames\/frames_Initial Planning.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/wireFrames\/frames_Wire Frames.jpg": {
+		"ft": 16384,
+		"iS": 0,
+		"oA": 0,
+		"oAP": "\/wireFrames\/frames_Wire Frames.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
 		}
 	},
 "hooks": [
