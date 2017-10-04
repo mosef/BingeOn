@@ -141,6 +141,9 @@ input[type=text] {
     .result {
         width: 100%;
     }
+    input[type=text] {
+        font-size: 1em;
+    }
 }
 @media (max-width: 739px), screen and (orientation: portrait) {
     main {
@@ -155,6 +158,9 @@ input[type=text] {
     .video-player {
         width: auto;
         height: auto;
+    }
+    input[type=text] {
+        font-size: 1.2em;
     }
 }
 @media (min-width: 740px), screen and (orientation: portrait) {
