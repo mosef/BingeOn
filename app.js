@@ -48,7 +48,6 @@ function toggleOptions(data) {
     const searchTerm = $(this)
       .find(".result-name > h2")
       .text();
-    console.log(searchTerm);
     getYouTube(searchTerm, displayYouTubeData.bind(this));
   });
 }
@@ -73,7 +72,6 @@ function displayYouTubeData(data) {
   $(this)
     .find(".youTube")
     .html(results);
-  console.log(data.items);
 }
 function searchSubmit() {
   $(".js-search-form").submit(e => {

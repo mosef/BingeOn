@@ -136,5 +136,32 @@ input[type=text] {
     }
     .video-player {
         Width: 100%;
+        height: auto;
+    }
+    .result {
+        width: 100%;
+    }
+}
+@media (max-width: 739px), screen and (orientation: portrait) {
+    main {
+        margin-top: 50%; 
+    }
+    .js-results {
+        width: 85%;
+    }
+    .result {
+        width: 100%;
+    }
+    .video-player {
+        width: auto;
+        height: auto;
+    }
+}
+@media (min-width: 740px), screen and (orientation: portrait) {
+    .js-results {
+        width: 80%;
+    }
+    .result {
+        width: 100%;
     }
 }
