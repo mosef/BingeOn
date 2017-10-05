@@ -87,6 +87,13 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+.hint {
+    text-align: center;
+    font-size: 1.4em;
+    margin-left: 25%;
+    margin-right: 25%;
+    position: relative;
+}
 .underline {
   width: 50%;
   height: 1px;
@@ -95,6 +102,13 @@ textarea:focus {
   margin-bottom: 10px;
   background-color: white;
   opacity: 0.8;
+}
+.x-button {
+    width: 1%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
 }
 .js-submit-btn {
   background: none;

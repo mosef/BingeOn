@@ -80,6 +80,7 @@ function searchSubmit() {
     const query = queryTarget.val();
     getDive(query);
     getYouTube(query);
+    $('.hint').hide();
     $(".js-results").empty();
   });
 }
@@ -113,8 +114,14 @@ function renderBackground() {
     })
     .resize();
 }
+function hideLandingModal() {
+$('.x-button').click(e => {
+    $('.hint').hide();
+  })
+}
 $(function() {
   searchSubmit();
   renderBackground();
   toggleOptions();
+  hideLandingModal();
 });
