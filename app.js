@@ -1,8 +1,3 @@
-$(function() {
-  searchSubmit();
-  renderBackground();
-  toggleOptions();
-});
 function getDive(query, callback) {
   const tasteDive_URL =
     "https://tastedive.com/api/similar?q=" +
@@ -118,3 +113,8 @@ function renderBackground() {
     })
     .resize();
 }
+$(function() {
+  searchSubmit();
+  renderBackground();
+  toggleOptions();
+});
