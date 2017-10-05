@@ -1,173 +1,188 @@
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-body{
-    background: url("./img/Asset 10@4x.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-family: 'Montserrat', sans-serif;
-    /*A0A0A0*/
-    /*E3E3E3*/
+  box-sizing: border-box;
 }
-#bg { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    z-index: -1;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-.bgwidth { 
-    width: 100%; 
+body {
+  background: url("./img/Asset 10@4x.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
 }
-.bgheight { 
-    height: 100%; 
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.bgwidth {
+  width: 100%;
+}
+.bgheight {
+  height: 100%;
 }
 .large-container {
-    margin-top: 18%;
+  margin-top: 18%;
 }
 .wrapper {
-    display: block;
+  display: block;
 }
-main, .js-submit-btn, input[type=text] {
-    text-align: center;
+main,
+.js-submit-btn,
+input[type="text"] {
+  text-align: center;
 }
 main {
-    width: 100%;
-    height: 40%;
-    border-radius: 5px;
-    padding-top: 30px;
-    color: #A0A0A0;
+  width: 100%;
+  height: 40%;
+  border-radius: 5px;
+  padding-top: 30px;
+  color: #a0a0a0;
 }
 .logo-banner {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 }
 h1 {
-    font-size: 700;
-    letter-spacing: 0.3em;
+  font-size: 700;
+  letter-spacing: 0.3em;
 }
 .search-area {
-    color: #E3E3E3;
+  color: #e3e3e3;
 }
-input[type=text] {
-    -webkit-appearance: none;
-    width: 50%;
-    margin-left: 25%;
-    color: white;
-    background: none;
-    text-align: center;
-    /* These are for different browser support */
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-style: none;
-    /*----------------*/
-    border-color: white;
-    border-image: none;
-    border-width: 2px;
-    opacity: 0.7;
-    display: inline-block;
-    font-size: 1.6em;
-    font-weight: 200;
-  }
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-      transition: background-color 5000s ease-in-out 0s;
-      color: white;
-  }
-.underline{
-    width: 50%;
-    height: 1px;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-bottom: 10px;
-    background-color: white;
-    opacity: 0.8;
+input[type="text"] {
+  -webkit-appearance: none;
+  width: 50%;
+  margin-left: 25%;
+  color: white;
+  background: none;
+  text-align: center;
+  /* These are for different browser support */
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-style: none;
+  /*----------------*/
+  border-color: white;
+  border-image: none;
+  border-width: 2px;
+  opacity: 0.7;
+  display: inline-block;
+  font-size: 1.6em;
+  font-weight: 200;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  color: white;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+.underline {
+  width: 50%;
+  height: 1px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10px;
+  background-color: white;
+  opacity: 0.8;
 }
 .js-submit-btn {
-    background: none;
-    color: white;
-    border-style: none;
-    font-size: 1.5em;
-    opacity: 0.8;
+  background: none;
+  color: white;
+  border-style: none;
+  font-size: 1.5em;
+  opacity: 0.8;
 }
 .js-results {
-    width: 40%;
-    text-align: center;
-    margin: auto;
-    z-index: 1;
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  z-index: 1;
 }
 .result {
-    display: inline-block;
-    background-color: #EEEEEE;
-    margin: 10px 5px 10px 5px;
-    padding: 20px 10px;
-    width: 80%;
+  display: inline-block;
+  background-color: #eeeeee;
+  margin: 10px 5px 10px 5px;
+  padding: 20px 10px;
+  width: 80%;
+  cursor: pointer;
 }
-.result-name, .result-info h2 {
-    color: black;
+.result-name,
+.result-info h2 {
+  color: black;
 }
 .loader {
-    border: 16px solid #f3f3f3; /* Light grey */
-    border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
-
+.error {
+  color: white;
+  padding-top: 10px;
+}
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 540px), screen and (orientation: portrait) {
-    main {
-        margin-top: 50%; 
-    }
-    .js-results {
-        width: 80%;
-    }
-    .video-player {
-        Width: 100%;
-        height: auto;
-    }
-    .result {
-        width: 100%;
-    }
-    input[type=text] {
-        font-size: 1em;
-    }
+  main {
+    margin-top: 50%;
+  }
+  .js-results {
+    width: 80%;
+  }
+  .video-player {
+    width: 100%;
+    height: auto;
+  }
+  .result {
+    width: 100%;
+  }
+  input[type="text"] {
+    font-size: 1em;
+  }
 }
 @media (max-width: 739px), screen and (orientation: portrait) {
-    main {
-        margin-top: 50%; 
-    }
-    .js-results {
-        width: 85%;
-    }
-    .result {
-        width: 100%;
-    }
-    .video-player {
-        width: auto;
-        height: auto;
-    }
-    input[type=text] {
-        font-size: 1.2em;
-    }
+  main {
+    margin-top: 50%;
+  }
+  .js-results {
+    width: 85%;
+  }
+  .result {
+    width: 100%;
+  }
+  .video-player {
+    width: auto;
+    height: auto;
+  }
+  input[type="text"] {
+    font-size: 1.2em;
+  }
 }
 @media (min-width: 740px), screen and (orientation: portrait) {
-    .js-results {
-        width: 80%;
-    }
-    .result {
-        width: 100%;
-    }
+  .js-results {
+    width: 80%;
+  }
+  .result {
+    width: 100%;
+  }
 }

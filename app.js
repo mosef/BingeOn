@@ -24,9 +24,10 @@ function getDive(query, callback) {
 }
 function displayDive(data) {
   const diveData = data.Similar.Results;
-  for (let i = 0; i < diveData.length; i++) {
-    let result = diveData[i];
-    $(".js-results").append(`<div class="result ${i}">
+  if (diveData.length !== 0) {
+    for (let i = 0; i < diveData.length; i++) {
+      let result = diveData[i];
+      $(".js-results").append(`<div class="result ${i}">
                               <div class="result-name">
                                 <h2>${result.Name}</h2>
                                   <div class="result-info" id="${result.yID}">
@@ -36,7 +37,10 @@ function displayDive(data) {
                                   
                               </div>
                             </div>`);
-    $(".result-info").hide();
+      $(".result-info").hide();
+    }
+  } else {
+    $(".js-results").append(`<div class="error"><h2>Sorry! Couldn't find that one.</h2></div>`);
   }
 }
 function toggleOptions(data) {
@@ -66,7 +70,8 @@ function displayYouTubeData(data) {
     ? data.items.map(
         item =>
           `<div class="player"><iframe width="560" height="315" src="https://www.youtube.com/embed/${item
-            .id.videoId}" frameborder="0" allowfullscreen class="video-player"></iframe></div>`
+            .id
+            .videoId}" frameborder="0" allowfullscreen class="video-player"></iframe></div>`
       )
     : `<h2>Window is not Available</h2>`;
   $(this)
