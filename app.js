@@ -35,7 +35,9 @@ function displayDive(data) {
       $(".result-info").hide();
     }
   } else {
-    $(".js-results").append(`<div class="error"><h2>Sorry! Couldn't find that one.</h2></div>`);
+    $(".js-results").append(
+      `<div class="error"><h2>Sorry! Couldn't find that one.</h2></div>`
+    );
   }
 }
 function toggleOptions(data) {
@@ -80,7 +82,7 @@ function searchSubmit() {
     const query = queryTarget.val();
     getDive(query);
     getYouTube(query);
-    $('.hint').hide();
+    $(".hint").hide();
     $(".js-results").empty();
   });
 }
@@ -115,9 +117,9 @@ function renderBackground() {
     .resize();
 }
 function hideLandingModal() {
-$('.x-button').click(e => {
-    $('.hint').hide();
-  })
+  $(".x-button").click(e => {
+    $(".hint").hide();
+  });
 }
 $(function() {
   searchSubmit();
