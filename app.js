@@ -25,6 +25,7 @@ function displayDive(data) {
       $(".js-results").append(`<div class="result ${i}">
                               <div class="result-name">
                                 <h2>${result.Name}</h2>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
                                   <div class="result-info" id="${result.yID}">
                                     <p>${result.wTeaser}</p>
                                     <div class="youTube"><div class="loader"></div></div>
